@@ -1,32 +1,32 @@
 import React from 'react'
-import  {AppBar , Toolbar , IconButton , Badge , MenuItem , Menu , Typography} from '@material-ui/core'
-import {ShoppingCart} from '@material-ui/icons'
+import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core'
+import { ShoppingCart } from '@material-ui/icons'
 import logo from '../../assets/logo.png'
 import makeStyles from './styles'
 
-const Navbar = () => {
+const Navbar = ({ totalItems }) => {
     const classes = makeStyles();
-  return (
-    <>
-        <AppBar position= 'fixed' className={classes.appBar} color="inherit">
-            <Toolbar>   
-                <Typography variant='h6' className={classes.title} color='inherit'>
-                    <img src={logo} alt='commerce.js' height='25px' className={classes.image} />
-                    Windoify
-                </Typography>
-                <div className={classes.grow} />
+    return (
+        <>
+            <AppBar position='fixed' className={classes.appBar} color="inherit">
+                <Toolbar>
+                    <Typography variant='h6' className={classes.title} color='inherit'>
+                        <img src={logo} alt='commerce.js' height='25px' className={classes.image} />
+                        Windoify
+                    </Typography>
+                    <div className={classes.grow} />
                     <div className={classes.button}>
                         <IconButton aria-label="Show cart items" color='inherit'>
-                            <Badge badgeContent={5} color="secondary" overlap="rectangular">
+                            <Badge badgeContent={totalItems} color="secondary" overlap="rectangular">
                                 <ShoppingCart />
                             </Badge>
                         </IconButton>
                     </div>
-            </Toolbar>
+                </Toolbar>
 
-        </AppBar>
-    </>
-  )
+            </AppBar>
+        </>
+    )
 }
 
 export default Navbar
