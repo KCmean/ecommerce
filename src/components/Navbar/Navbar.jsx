@@ -13,6 +13,7 @@ const Navbar = ({ totalItems }) => {
                     <Typography variant='h6' className={classes.title} color='inherit'>
                         <img src={logo} alt='commerce.js' height='25px' className={classes.image} />
                         Windoify
+                        
                     </Typography>
                     <div className={classes.grow} />
                     <div className={classes.button}>
