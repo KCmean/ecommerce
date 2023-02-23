@@ -39,4 +39,4 @@ const handleAddToCart = () => onAddToCart(product.id, 1);
     </Card>
   )
 }
-export default Product
+export default Product;
