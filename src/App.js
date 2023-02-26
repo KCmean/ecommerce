@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Products, Navbar, Cart } from "./components";
 import { commerce } from "./assets/lib/commerce";
-import { Card } from "@material-ui/core";
 import { CartElement } from "@stripe/react-stripe-js";
 
 
@@ -18,29 +17,26 @@ const App = () => {
   };
   
   const fetchCart = async () => {
-    
     setCart(await commerce.cart.retrieve());
-    console.log(cart);
   };
   
   const handleAddToCart = async (productId, quantity) => {
     const item = await commerce.cart.add(productId, quantity);
     setCart(item);
+    // console.log(item)
   };
   
   useEffect(() => { 
     fetchProducts();
     fetchCart();
   }, []);
-  
-  console.log();
-
+  console.log( {cart} )
 
   return (
     <div>
       <Navbar totalItems={cart.total_items} />
       {/* <Products products={products} onAddToCart={handleAddToCart} /> */}
-      <Cart cart={commerce.cart} />
+      <Cart cart={cart} />
     </div>
   );
 };
