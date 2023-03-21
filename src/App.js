@@ -18,8 +18,8 @@ const App = () => {
   };
 
   const handleAddToCart = async (productId, quantity) => {
-    const item = await commerce.cart.add(productId, quantity);
-    setCart(item);
+    const { cart } = await commerce.cart.add(productId, quantity);
+    setCart(cart);
     // console.log(item)
   };
   const handleUpdateCartQty = async (productId, quantity) => {
