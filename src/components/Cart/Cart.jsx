@@ -14,9 +14,13 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
             </Typography>
         )
     };
+    // console.log(cart.line_items);
+    if (!cart.line_items) return 'Loading';
+
     const FilledCart = () => {
         return (
             <>
+                
                 <Grid container spacing={3}>
                     {cart.line_items.map((item) => (
                         <Grid item xs={12} sm={4} key={item.id}>
@@ -31,7 +35,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
                     <div>
                         <Button className={classes.emptyButton} size="large" type='button' variant='contained' color='secondary' onClick={handleEmptyCart}
                         >Empty Cart</Button>
-                        <Button className={classes.checkoutButton} size="large" type='button' variant='contained' color='primary'>Check out</Button>
+                        <Button component={Link} to='/checkout'className={classes.checkoutButton} size="large" type='button' variant='contained' color='primary'>Check out</Button>
                     </div>
                 </div>
             </>

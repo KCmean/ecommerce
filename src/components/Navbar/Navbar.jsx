@@ -5,11 +5,12 @@ import logo from '../../assets/logo.png'
 import makeStyles from './styles'
 import { Link, useLocation } from 'react-router-dom';
 
-const Navbar = ({ totalItems }) => {
+const Navbar = ( { totalItems } ) => {
     const classes = makeStyles();
     const location = useLocation();
 
     if(location.pathname === '/');
+    // if(cartIt == 'undefined ') return '0';
     return (
         <>
             <AppBar position='fixed' className={classes.appBar} color="inherit">

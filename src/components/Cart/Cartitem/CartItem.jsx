@@ -5,6 +5,7 @@ import makeStyles from './styles.js';
 
 const CartItem = ({ item, onUpdateCartQty, OnRemoveFromCart }) => {
     const classes = makeStyles();
+    // console.log(item);
     return (
         <Card>
             <CardMedia image={item.image.url} alt={item.name} className={classes.media} />
